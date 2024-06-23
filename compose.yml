@@ -1,0 +1,10 @@
+services:
+  bot:
+    build: .
+    environment:
+      - BOT_DISCORD_TOKEN=${BOT_DISCORD_TOKEN}
+      - BOT_DATA_DIRECTORY=/var/button2
+    volumes:
+      - type: bind
+        source: ${COMPOSE_HOST_BOT_DATA_DIRECTORY}
+        target: /var/button2
